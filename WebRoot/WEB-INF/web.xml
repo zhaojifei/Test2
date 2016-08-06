@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RegisterUIServlet</servlet-name>
+    <servlet-class>cn.itcast.web.UI.RegisterUIServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>T</servlet-name>
+    <servlet-class>cn.itcast.web.UI.T</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>S</servlet-name>
+    <servlet-class>cn.itcast.web.UI.S</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>cn.itcast.web.controller.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>testRegisterUIServlet</servlet-name>
+    <servlet-class>junit.test.testRegisterUIServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>testRegisterServlet</servlet-name>
+    <servlet-class>cn.itcast.web.controller.testRegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginUIServlet</servlet-name>
+    <servlet-class>cn.itcast.web.UI.LoginUIServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>cn.itcast.web.controller.LoginServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>RegisterUIServlet</servlet-name>
+    <url-pattern>/servlet/RegisterUIServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>T</servlet-name>
+    <url-pattern>/servlet/T</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>S</servlet-name>
+    <url-pattern>/servlet/S</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/servlet/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>testRegisterUIServlet</servlet-name>
+    <url-pattern>/servlet/testRegisterUIServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>testRegisterServlet</servlet-name>
+    <url-pattern>/servlet/testRegisterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginUIServlet</servlet-name>
+    <url-pattern>/servlet/LoginUIServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/servlet/LoginServlet</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>

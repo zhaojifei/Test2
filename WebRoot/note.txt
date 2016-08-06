@@ -1,0 +1,6 @@
+项目基本思路：
+1.web页面设计：index.jsp
+2.点击index中的超链接转向与web层交互的UIservlet
+3.UIservlet调用下一个界面：register.jsp显示登录界面
+4.登录界面填写相关信息，点击确认按钮，类型submit，提交数据，获得request
+5.RuntimeException代表不需要程序员捕捉处理的异常

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="javaWeb" basedir="." default="all">
+        <path id="classpath">
+                <fileset dir="./WebRoot/WEB-INF/lib">
+                        <include name="**/*.jar" />
+                </fileset>
+        </path>
+
+        <target name="prepare" description="prepare ">
+                <mkdir dir="dist/tmp" />
+                <mkdir dir="dist/module" />
+                <mkdir dir="dist/war" />            
+        </target>
+
+        <target name="compile" > 
+                <mkdir dir="dist/tmp"/>
+                <javac 
+                        debug="true" 
+                        fork="yes" destdir="dist/tmp" encoding="GBK" classpathref="classpath">
+                        <src path="src"></src>
+                </javac>
+                
+                <copy todir="dist/tmp">
+                        <fileset dir="src" includes="**/*.xml" excludes="**/*.java"></fileset>                        
+                </copy>
+                
+        </target>
+        
+        <target name="jar-web" description="web jar">
+                <delete dir="dist/tmp" />
+                <mkdir dir="dist/tmp" />
+                <delete file="dist/war/javaWeb-web.jar" />
+                <javac srcdir="src" includes="cn/itcast/**/**/**/**/*.*,junit/test/*.*,*.*" debug="true" fork="yes" destdir="dist/tmp" classpathref="classpath" encoding="GBK" includeantruntime="on"/>
+                <jar destfile="dist/war/javaWeb-web.jar" update="true">
+                        <fileset dir="dist/tmp" includes="**/*.*" />
+                </jar>
+        </target>
+        
+        <target name="war" description="war javaWeb" depends="jar-web">
+                <delete dir="dist/tmp" />
+                <mkdir dir="dist/tmp" />
+                <delete file="dist/war/javaWeb.war" />
+                <copy todir="WebRoot/WEB-INF/lib">
+                        <fileset dir="dist/war"/>
+                </copy>
+                <war warfile="dist/war/javaWeb.war"
+                        includes="**/*.*"
+                        excludes="WEB-INF/classes/**/*.class"
+                        webxml="WebRoot/WEB-INF/web.xml" 
+                        update="true" 
+                        basedir="WebRoot"/>
+                <delete file="WebRoot/WEB-INF/lib/javaWeb-web.jar" />        
+        </target>
+        
+
+        <target name="all"  depends="prepare, jar-web, war">
+        </target>
+
+</project>
